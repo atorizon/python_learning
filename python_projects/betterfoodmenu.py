@@ -119,7 +119,18 @@ while True:
             continue
         case "n":
             print(f'Okay! \nHere is your receipt: \n{food_receipt}')
-            print(f'Your total is ${order_total}')
+            print(f'Your total is ${order_total}!')
+            while True: 
+                pay=int(input("How much will you pay?: "))
+                if pay < order_total:
+                    print("I'm sorry, that is not enough.")
+                elif pay > order_total:
+                    change=pay-order_total
+                    print(f'Your change is ${change}. Thank you for eating!')
+                    break
+                else:
+                    print('The money you gave is exact, thank you!')
+                    break
             break
         case _:
             category_choice_again=input("Invalid Choice. Would you like to order again?: ")
